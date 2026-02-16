@@ -7,6 +7,5 @@
     "start": "echo 'Run start command'"
   },
   "dependencies": {
-    "node-fetch": "^2.6.1"
   }
 }
