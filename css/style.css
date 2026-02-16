@@ -1212,33 +1212,5 @@ section:nth-child(odd) .animate.scroll,
     margin-bottom: 1.5rem;
 }
 
-#spotify-activity {
-    font-size: 1.8rem;
-    color: var(--text-color);
-}
 
-.song-info img {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    margin-right: 1rem;
-    border-radius: 5px;
-}
-
-.song-info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-.song-info p {
-    margin: 0;
-    line-height: 1.2;
-}
-
-.song-title {
-    font-weight: 600;
-    color: var(--main-color);
-}
 

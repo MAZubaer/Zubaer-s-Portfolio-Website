@@ -34,17 +34,12 @@
             <button class="filter-btn active" data-filter="all" onclick="filterItems('all')">All</button>
             <button class="filter-btn" data-filter="movie" onclick="filterItems('movie')">Movies</button>
             <button class="filter-btn" data-filter="series" onclick="filterItems('series')">Series</button>
-            <button class="filter-btn" data-filter="book" onclick="filterItems('book')">Books</button>
         </div>
 
-        <div class="category-section" id="book-section">
-            <h3 class="category-title">Kitaplık: Okuduklarım</h3>
-            <div class="items-grid" data-category="book">
-            </div>
-        </div>
+
 
         <div class="category-section" id="media-section">
-            <h3 class="category-title">Sinema & TV: İzlediklerim</h3>
+            <h3 class="category-title">Cinema & TV: Watched</h3>
             <div class="items-grid" data-category="media">
             </div>
         </div>
@@ -56,10 +51,10 @@
     
     <script>
         // ----------------------------------------------------
-        // KART OLUŞTURMA VE YÜKLEME FONKSİYONU
+        // CARD CREATION AND LOADING FUNCTION
         // ----------------------------------------------------
         function createCardHTML(item) {
-            // Tek bir kart için HTML yapısını oluşturur (geri döndürür)
+            // Creates the HTML structure for a single card (returns it)
             return `
             <div class="interest-card" data-category="${item.category}" id="item-${item.id}">
                 <img src="${item.image}" alt="${item.title}">
@@ -76,38 +71,30 @@
         }
 
         function loadInterests() {
-            // Verileri kategorilere göre ayır
-            const bookGrid = document.querySelector('.items-grid[data-category="book"]');
+            // Separate data by categories
             const mediaGrid = document.querySelector('.items-grid[data-category="media"]');
 
             myInterests.forEach(item => {
                 const cardHTML = createCardHTML(item);
-
-                if (item.category === 'book') {
-                    bookGrid.innerHTML += cardHTML;
-                } else if (item.category === 'series' || item.category === 'movie') {
+                if (item.category === 'series' || item.category === 'movie') {
                     mediaGrid.innerHTML += cardHTML;
                 }
-                // NOT: Sitenizdeki book dışındaki tüm item'ler Sinema & TV'de toplanacaktır.
             });
 
-            // İlk yüklemede animasyonu tetikle (eski çözümümüz)
-            
-
-            // İlk yüklemede filtrelemeyi ayarla
+            // Set filtering on first load
             filterItems('all');
         }
 
         // ----------------------------------------------------
-        // FİLTRELEME FONKSİYONU (Önceki Hali, Sadece Çağrıları Değişecek)
+        // FILTER FUNCTION (Previous Version, Only Calls Will Change)
         // ----------------------------------------------------
         function filterItems(filterValue) {
             const filterButtons = document.querySelectorAll('.filter-btn');
             const interestCards = document.querySelectorAll('.interest-card');
             const categorySections = document.querySelectorAll('.category-section');
 
-            // ... (Bu fonksiyonun içeriği önceki en son çalışan haliyle aynı kalacak) ...
-            // ... (Buton aktif etme ve display: '' mantığı) ...
+            // ... (The content of this function will remain the same as the last working version) ...
+            // ... (Button activation and display: '' logic) ...
 
             filterButtons.forEach(btn => btn.classList.remove('active'));
             document.querySelector(`.filter-btn[data-filter="${filterValue}"]`).classList.add('active');
@@ -121,9 +108,10 @@
                 }
             });
 
+            // Only show/hide the media section now
             categorySections.forEach(section => {
                 const visibleCardsCount = section.querySelectorAll('.interest-card:not([style*="display: none"])').length;
-                if (filterValue !== 'all' && visibleCardsCount === 0) {
+                if (visibleCardsCount === 0) {
                     section.style.display = 'none';
                 } else {
                     section.style.display = 'block';
@@ -131,11 +119,11 @@
             });
         }
 
-        // Sayfa yüklendiğinde loadInterests fonksiyonunu çağır
+        // Call loadInterests function when page loads
         window.addEventListener('load', loadInterests);
 
-        // (Animasyonu manuel tetikleyen eski activateScrollAnimations fonksiyonunun tanımı burada olmalıdır, 
-        // eğer onu ayrı bir js dosyasına taşımadıysanız.)
+        // (The definition of the old activateScrollAnimations function that manually triggers animation should be here, 
+        // if you haven't moved it to a separate js file.)
     </script>
     
 
