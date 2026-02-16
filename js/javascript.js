@@ -65,7 +65,7 @@ if (downloadCvBtn) { // if downloadCv element exists
     downloadCvBtn.addEventListener('click', function (event) {
         event.preventDefault();
         if (confirm('Do you want to download the CV file?')) {
-            window.location.href = 'ataBerkayKarakusCV.pdf';
+            window.location.href = 'ZubaerCV.pdf';
         }
     });
 }
@@ -75,7 +75,7 @@ if (downloadCv2Btn) { // if downloadCv2 element exists
     downloadCv2Btn.addEventListener('click', function (event) {
         event.preventDefault();
         if (confirm('Do you want to download the CV file?')) {
-            window.location.href = 'ataBerkayKarakusCV.pdf';
+            window.location.href = 'ZubaerCV.pdf';
         }
     });
 }
