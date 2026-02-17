@@ -131,7 +131,7 @@ const myInterests = [
         category: "movie",
         status: "To Watch",
         rating: "Pending",
-        image: "others/Fight_Club.jpg",
+        image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQGBz-JQ37g1Ms86Zt0j8xlyCQGat56ylElHzv5hokMpixc7ACP",
         tagClass: "watchlist"
     },
     {
