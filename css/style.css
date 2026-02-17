@@ -277,13 +277,11 @@ section{
     padding-bottom: 6rem;
 }
 
-/* Ana Sayfa Başlık Stili (mevcut stilinizi kullanır) */
 .heading {
     position: relative;
     font-size: 5rem;
     margin-bottom: 3rem;
     text-align: center;
-    /* Gerekli renk tanımlaması */
     color: var(--text-color); 
 }
 
@@ -986,80 +984,67 @@ section:nth-child(odd) .animate.scroll,
     }
 }
 
-/* interests.html için Gelişmiş Tasarım Stilleri */
 
-/* Ana Kapsayıcı */
-/* css/style.css dosyasında: Interests Sayfasının Ana Bölümü */
 .interests-page {
-    /* Başlık ve menü overlap olmasın diye PADDING değerini kontrol edin/artırın */
-    padding: 12rem 9% 5rem; /* 12rem YETERLİ OLMALI, ancak 14rem deneyebilirsiniz */
+    padding: 12rem 9% 5rem; 
     min-height: 100vh;
     background: var(--second-bg-color); 
 }
 
-/* Ana Sayfa Başlık Stili (mevcut stilinizi kullanır) */
-
-
-/* Kategori Başlıkları (Kitaplık, Sinema & TV) */
-/* css/style.css dosyanızda kontrol edin */
 
 .category-title {
     position: relative;
     display: inline-block;
     font-size: 3.5rem;
     margin: 3rem 0 2rem 0;
-    color: var(--text-color); /* RENK TANIMI BURADA KRİTİK */
+    color: var(--text-color); 
     border-bottom: .4rem solid var(--main-color);
     padding-bottom: .5rem;
 }
 
-/* Kategori Başlıkları (Kitaplık, Sinema & TV) */
 .category-section {
     margin-bottom: 5rem;
 }
 
 
 
-/* Kartların Kılavuz Düzeni (Grid) */
 .items-grid {
     display: grid;
-    /* 3 sütunlu dinamik grid yapısı (maksimum 300px genişliğinde sütunlar) */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
     gap: 2.5rem;
 }
 
-/* Tekil İlgi Alanı Kartı */
+
 .interest-card {
     position: relative;
     border-radius: 1rem;
     overflow: hidden;
-    background: var(--bg-color); /* Kart arkaplanı */
+    background: var(--bg-color);
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     cursor: pointer;
-    min-height: 450px; /* Kartın minimum yüksekliği */
+    min-height: 450px; 
 }
 
-/* Hover Efekti */
+/* Hover Efffect */
 .interest-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 0 2rem var(--main-color); /* Neon Mavi Gölge Efekti */
-    /* Resmin üzerine gelindiğinde hafif büyütülmesi (Opsiyonel) */
+    box-shadow: 0 0 2rem var(--main-color); 
 }
 
 .interest-card img {
     width: 100%;
-    height: 300px; /* Resim yüksekliği kartın üst kısmını kaplasın */
-    object-fit: cover; /* Resmin boyutunu koruyarak sığdırır */
+    height: 300px; 
+    object-fit: cover; 
     transition: transform 0.4s ease;
 }
 
-/* Kart İçeriği */
+
 .card-content {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    height: calc(450px - 300px); /* Kalan içeriğin yüksekliği */
+    height: calc(450px - 300px); 
 }
 
 .card-content h4 {
@@ -1075,7 +1060,7 @@ section:nth-child(odd) .animate.scroll,
     opacity: 0.8;
 }
 
-/* Durum Etiketleri (Tag) */
+
 .tag {
     display: inline-block;
     padding: .3rem .8rem;
@@ -1083,32 +1068,32 @@ section:nth-child(odd) .animate.scroll,
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: var(--bg-color); /* Yazı rengi */
+    color: var(--bg-color); 
 }
 
 .tag.completed {
-    background-color: #28a745; /* Yeşil tonu */
+    background-color: #28a745; 
 }
 
 .tag.reading {
-    background-color: var(--main-color); /* Neon Mavi */
+    background-color: var(--main-color); 
 }
 
 .tag.watchlist {
-    background-color: #ffc107; /* Sarı tonu */
+    background-color: #ffc107;
 }
 
-/* Değerlendirme (Rating) */
+
 .rating {
     display: flex;
     align-items: center;
     font-size: 1.6rem;
     color: var(--text-color);
-    margin-top: auto; /* Sayfanın altına yapıştırmak için */
+    margin-top: auto; 
 }
 
 .rating i {
-    color: #ffc107; /* Yıldızlar için sarı */
+    color: #ffc107; 
     margin-right: .5rem;
 }
 
@@ -1137,33 +1122,27 @@ section:nth-child(odd) .animate.scroll,
     }
 }
 
-/* interests.html sayfasına özel animasyon düzeltmesi */
 
-/* 1. Başlık ve İçerik Animasyonlarının Çalıştırılması */
-/* interests.html sayfasındaki 'show-animate' sınıfı varsa, içindeki tüm scroll animasyonlarını tetikle */
 .interests-page.show-animate .animate.scroll {
     transition-delay: calc(.3s * var(--i));
-    width: 0 !important; /* Animasyonlu koyu bloğu sıfıra çekerek başlığı ortaya çıkarır. */
+    width: 0 !important; 
 }
 
-/* 2. 'Animate' sınıfının varsayılan gizleme durumunu override etme */
-/* Bu kural, animasyon tamamlanana kadar içeriği gizleyen kuralı geçersiz kılmalıdır */
+
 .heading .animate.scroll,
 .category-title .animate.scroll {
-    /* Başlangıçta görünür olmalarını sağlamak için */
     width: 100%; 
 }
 
-/* Filtre Butonları Stilleri */
 .filter-buttons {
     text-align: center;
     margin-top: 2rem;
-    margin-bottom: 4rem; /* Kartlarla arasında boşluk bırakır */
+    margin-bottom: 4rem;
 }
 
 .filter-btn {
-    background: var(--second-bg-color); /* Koyu arka plan */
-    color: var(--main-color); /* Neon mavi yazı */
+    background: var(--second-bg-color); 
+    color: var(--main-color); 
     border: .2rem solid var(--main-color);
     padding: 1rem 2rem;
     margin: 0 .5rem;
@@ -1171,12 +1150,12 @@ section:nth-child(odd) .animate.scroll,
     font-size: 1.6rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s, color 0.3s, box-shadow 0.3s; /* <-- "transition" eklenmeli */
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s; 
 }
 
 .filter-btn:hover {
     background: var(--main-color);
-    color: var(--bg-color); /* Hover'da arka plan ve yazı rengini değiştir */
+    color: var(--bg-color); 
     box-shadow: 0 0 1rem var(--main-color);
 }
 
@@ -1186,15 +1165,12 @@ section:nth-child(odd) .animate.scroll,
     box-shadow: 0 0 1.5rem var(--main-color);
 }
 
-/* Filtrelenen öğeler için gizleme kuralı */
+
 .interest-card.hidden {
     display: none;
 }
 
 
-
-/* Şarkı*/
-/* css/style.css dosyanıza ekleyin */
 .current-listening-box {
     text-align: center;
     margin: 4rem auto 5rem;
