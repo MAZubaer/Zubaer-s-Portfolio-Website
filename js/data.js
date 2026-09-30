@@ -129,10 +129,10 @@ const myInterests = [
         title: "Fight Club",
         author: "Director: David Fincher",
         category: "movie",
-        status: "To Watch",
-        rating: "Pending",
+        status: "Watched",
+        rating: "5/5",
         image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQGBz-JQ37g1Ms86Zt0j8xlyCQGat56ylElHzv5hokMpixc7ACP",
-        tagClass: "watchlist"
+        tagClass: "completed"
     },
     {
         id: 55,
