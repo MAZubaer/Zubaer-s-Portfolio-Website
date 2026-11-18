@@ -439,12 +439,13 @@ span{
 .portfolio-container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    align-items: center;
+    align-items: stretch;
     gap: 2.5rem;
 }
 
 .portfolio-container .portfolio-box{
     position: relative;
+    aspect-ratio: 16 / 9;
     border-radius: 2rem;
     box-shadow: 0 0 1rem var(--bg-color);
     overflow: hidden;
@@ -452,7 +453,11 @@ span{
 }
 
 .portfolio-box img{
+    display: block;
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
     transition: .5s ease;
 }
 
@@ -472,7 +477,8 @@ span{
     align-items: center;
     flex-direction: column;
     text-align: center;
-    padding: 0 4rem;
+    padding: 1.5rem 3rem;
+    overflow: hidden;
     transform: translateY(100%);
     transition: .5s ease;
 }
@@ -480,24 +486,57 @@ span{
     transform:translateY(0);
 }
 
-.portfolio-layer h4{
+.portfolio-layer h3{
     font-size: 3rem;
 }
 .portfolio-layer p{
     font-size: 1.6rem;
-    margin: .3rem 0 1;
+    margin: .3rem 0 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
-.portfolio-layer a{
+.portfolio-links{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+.portfolio-links a{
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 5rem;
-    height: 5rem;
-    background: var(--text-color);
-    border-radius: 50%;
+    gap: .6rem;
+    padding: .7rem 1.6rem;
+    border: .2rem solid var(--text-color);
+    border-radius: 5rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    transition: .3s ease;
 }
-.portfolio-layer a i{
-    font-size: 2rem;
+.portfolio-links a i{
+    font-size: 1.9rem;
+}
+/* Live demo: solid button */
+.portfolio-links .link-demo{
+    background: var(--text-color);
+    color: var(--second-bg-color);
+}
+.portfolio-links .link-demo:hover{
+    background: var(--second-bg-color);
+    border-color: var(--second-bg-color);
+    color: var(--main-color);
+}
+/* GitHub: outline button */
+.portfolio-links .link-code{
+    background: rgba(8, 27, 41, .35);
+    color: var(--text-color);
+}
+.portfolio-links .link-code:hover{
+    background: var(--text-color);
     color: var(--second-bg-color);
 }
 
@@ -895,7 +934,7 @@ section:nth-child(odd) .animate.scroll,
     .portfolio-box {
         margin-bottom: 2.5rem;
     }
-    .portfolio-layer h4 {
+    .portfolio-layer h3 {
         font-size: 2rem; /* Slightly larger for Laptop L */
     }
 
@@ -920,7 +959,7 @@ section:nth-child(odd) .animate.scroll,
         margin-bottom: 2rem;
     }
 
-    .portfolio-layer h4 {
+    .portfolio-layer h3 {
         font-size: 2rem; /* Keep the base size for standard laptops */
     }
 
@@ -945,7 +984,7 @@ section:nth-child(odd) .animate.scroll,
         margin-bottom: 2rem;
     }
 
-    .portfolio-layer h4 {
+    .portfolio-layer h3 {
         font-size: 1.8rem; /* Slightly smaller for tablets */
     }
 
@@ -971,7 +1010,7 @@ section:nth-child(odd) .animate.scroll,
         margin-bottom: 1.5rem; /* Tighter margin for mobile devices */
     }
 
-    .portfolio-layer h4 {
+    .portfolio-layer h3 {
         font-size: 2.2rem; /* Smaller font size for mobile devices */
     }
 
